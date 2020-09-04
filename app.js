@@ -30,7 +30,7 @@ function renderCafe(doc) {
   li.setAttribute("data-id", doc.id);
   name.textContent = doc.data().name;
   city.textContent = doc.data().city;
-  cross.textContent = 'x';
+  cross.textContent = "x";
 
   li.appendChild(name);
   li.appendChild(city);
@@ -48,7 +48,7 @@ function renderCafe(doc) {
 
 // getting data
 db.collection("cafes")
-.where('city','==','Siddipet')
+  .orderBy("city")
   .get()
   .then((snapshot) => {
     snapshot.docs.forEach((doc) => {
